@@ -36,7 +36,7 @@ app.get("/compose", function(req, res) {
 var posts = [];
 
 app.post("/compose", function(req, res) {
-  // var post = { 
+  // var post = {
   //   title: req.body.postTitle,
   //   body: req.body.postBodyTextArea
   // };
@@ -51,6 +51,12 @@ app.post("/compose", function(req, res) {
   console.log("Posts: " + JSON.stringify(posts) );
 
   res.redirect("/");
+});
+
+app.get("/posts/:topic/:topic2", function(req, res) {
+  console.log(req.params.topic);
+  console.log(req.params);
+  res.send(req.params);
 });
 
 
